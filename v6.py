@@ -148,10 +148,6 @@
 
 
 
-
-
-
-
 # ### Punto A – Crea libro e info
 
 # In `libri.py`:
@@ -171,12 +167,52 @@
 # - Stampa le informazioni di ogni libro.
 
 
-def crea_libro(titolo: str, autore: str, genere: str, copie_disponibili: int) -> dict
+def crea_libro(titolo: str, autore: str, genere: str, copie_disponibili: int) -> dict:
     return {
         "titolo": titolo,
         "autore": autore,
         "genere": genere,
         "copie_disponibili": copie_disponibili
     }
+
 def info_libro(libro: dict) -> str:
-    testo = (f"(libro {titolo}"
+    testo = f"{libro["titolo"]} di {libro["autore"]} ({libro["genere"]})" - "Copie disponibili: " f"{libro["copie_disponibili"]}"
+
+def libro_disponibile(libro:dict) -> bool:
+    return libro["copie_disponibili: "] > 0
+
+Libro1 = crea_libro("1984", "George Orwell", "Fantascienza", 1)
+Libro2 = crea_libro("Dune", "Frank Herbert", "Fantascienza", 2)
+Libro3 = crea_libro("Il piccolo principe", "Antoine de Saint-Exupéry", "Romanzo", 1)
+Libro4 = crea_libro("Harry Potter", "J.K. Rowling", "Fantasy", 3)
+
+
+
+
+# ### Punto B – Filtri sui libri
+
+# In `libri.py`:
+
+# 1. Definisci `filtra_per_genere(libri: list[dict], genere: str) -> list[dict]`:
+#    Restituisce una nuova lista con solo i libri che appartengono al genere indicato.
+
+# 2. Definisci `libri_disponibili(libri: list[dict]) -> list[dict]`:
+#    Restituisce una nuova lista con solo i libri che hanno copie disponibili.
+
+# 3. Definisci `cerca_per_autore(libri: list[dict], autore: str) -> list[dict]`:
+#    Restituisce una nuova lista con i libri scritti dall'autore indicato.
+
+# Nel `main()`:
+# - Filtra i libri di un genere specifico e stampa i titoli.
+# - Stampa i titoli dei libri disponibili.
+# - Cerca i libri di un autore e stampa i titoli trovati.
+
+
+def filtra_per_genere(libri: list[dict], genere: str) -> list[dict]:
+    risultato = []
+    for Libro in libri:
+        if libri["genere"] == genere:
+            risultato.append(Libro)
+    return risultato
+
+def libri_disponibili
